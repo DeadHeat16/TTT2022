@@ -7,6 +7,15 @@ board = [['_','_','_'],
 symbols = ['X', 'O']
 turn = 0
 
+def welcome_screen():
+  logo = '''
+ ____  __  ___    ____  __    ___    ____  __  ____ 
+(_  _)(  )/ __)  (_  _)/ _\  / __)  (_  _)/  \(  __)
+  )(   )(( (__     )( /    \( (__     )( (  O )) _) 
+ (__) (__)\___)   (__)\_/\_/ \___)   (__) \__/(____)
+  '''
+  print(logo)
+
 # Prints the board
 def print_board():
   for row in board:
@@ -43,6 +52,8 @@ def clearConsole():
     command = 'cls'
   os.system(command)
 
+welcome_screen()
+
 while not is_game_over():
   clearConsole()
   
@@ -52,6 +63,11 @@ while not is_game_over():
 
   # Get the user input
   row_choice, col_choice = player_in()
+
+  if (row_choice > 2 or row_choice < 0 or col_choice > 2 or col_choice < 0):
+    print(f"({row_choice}, {col_choice}) is not on the grid. Please use row and column numbers from 0 to 2.")
+    continue
+
 
   # Put their move on the board
   make_move(row_choice, col_choice, symbols[turn])
