@@ -26,14 +26,22 @@ def change_turn():
   global turn
   turn = (turn + 1) % 2
 
+def player_in():
+  while True:
+    try:
+      row_choice = int(input('Which row would you like to choose? '))
+      col_choice = int(input('Which row would you like to choose? '))
+      return row_choice, col_choice
+    except:
+      print("Not a valid option, please try again.")
+
 while not is_game_over():
   # Print the board and whose turn it is
   print_board()
   print('Player {}'.format(turn+1))
 
   # Get the user input
-  row_choice = int(input('Which row would you like to choose? '))
-  col_choice = int(input('Which row would you like to choose? '))
+  row_choice, col_choice = player_in()
 
   # Put their move on the board
   make_move(row_choice, col_choice, symbols[turn])
