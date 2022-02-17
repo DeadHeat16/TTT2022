@@ -1,3 +1,5 @@
+import os
+
 board = [['_','_','_'],
          ['_','_','_'],
          ['_','_','_']]
@@ -35,7 +37,15 @@ def player_in():
     except:
       print("Not a valid option, please try again.")
 
+def clearConsole():
+  command = 'clear'
+  if os.name in ('nt', 'dos'):  # If Machine is running on Windows, use cls
+    command = 'cls'
+  os.system(command)
+
 while not is_game_over():
+  clearConsole()
+  
   # Print the board and whose turn it is
   print_board()
   print('Player {}'.format(turn+1))
