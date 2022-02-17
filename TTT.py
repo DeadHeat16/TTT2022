@@ -41,7 +41,7 @@ def player_in():
   while True:
     try:
       row_choice = int(input('Which row would you like to choose? '))
-      col_choice = int(input('Which row would you like to choose? '))
+      col_choice = int(input('Which column would you like to choose? '))
       return row_choice, col_choice
     except:
       print("Not a valid option, please try again.")
