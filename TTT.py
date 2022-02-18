@@ -25,7 +25,11 @@ def print_board():
 
 # Inserts a move at a given row & column
 def make_move(row, col, symbol):
-  board[row][col] = symbol
+  if (board[row][col] == "_"):
+    board[row][col] = symbol
+  else:
+    print("already chosen!")
+
 
 # Returns true when the game is over 
 # Note: Just a stub. Doesn't work yet
@@ -59,20 +63,21 @@ while not is_game_over():
   # Print the board and whose turn it is
   print_board()
   print('Player {}'.format(turn+1))
-
+  
   # Get the user input
   row_choice, col_choice = player_in()
+
+  
 
   if (row_choice > 2 or row_choice < 0 or col_choice > 2 or col_choice < 0):
     print(f"({row_choice}, {col_choice}) is not on the grid. Please use row and column numbers from 0 to 2.")
     continue
 
-
   # Put their move on the board
+  
   make_move(row_choice, col_choice, symbols[turn])
-
+  # Clear the console from previous turn
+  clearConsole()
   # Next turn
   change_turn()
 
-  # Clear the console from previous turn
-  clearConsole()
