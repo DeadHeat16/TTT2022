@@ -34,7 +34,16 @@ def make_move(row, col, symbol):
 # Returns true when the game is over 
 # Note: Just a stub. Doesn't work yet
 def is_game_over():
+  if is_game_draw() is True:
+    return True 
   return False
+
+def is_game_draw():
+  for row in board:
+   for item in row:
+     if item == '_' :
+       return False 
+  return True
 
 # Alternates the turn between 0 and 1
 def change_turn():
@@ -80,4 +89,8 @@ while not is_game_over():
   clearConsole()
   # Next turn
   change_turn()
+
+print_board()
+if is_game_draw() is True:
+  print("There are no space left in the board for you to fill.")
 
