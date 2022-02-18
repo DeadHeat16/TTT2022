@@ -55,7 +55,6 @@ def clearConsole():
 welcome_screen()
 
 while not is_game_over():
-  clearConsole()
   
   # Print the board and whose turn it is
   print_board()
@@ -74,3 +73,6 @@ while not is_game_over():
 
   # Next turn
   change_turn()
+
+  # Clear the console from previous turn
+  clearConsole()
