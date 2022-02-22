@@ -25,15 +25,30 @@ def is_game_over():
 def change_turn():
   global turn
   turn = (turn + 1) % 2
-
+  if turn==0:
+    print("\033[1;34;40m \n")
+  else:
+    print("\033[1;32;40m \n")
+  
+  
+  
 while not is_game_over():
   # Print the board and whose turn it is
   print_board()
   print('Player {}'.format(turn+1))
-
+  if turn==0:
+    print("\033[1;34;40m \n")
+  else:
+    print("\033[1;32;40m \n")
   # Get the user input
   row_choice = int(input('Which row would you like to choose? '))
+  	
+ 
   col_choice = int(input('Which row would you like to choose? '))
+  print("\033[1;34;40m \n")
+  
+ 
+  
 
   # Put their move on the board
   make_move(row_choice, col_choice, symbols[turn])
