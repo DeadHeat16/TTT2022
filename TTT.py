@@ -49,6 +49,11 @@ def is_game_draw():
 def change_turn():
   global turn
   turn = (turn + 1) % 2
+  if turn==0:
+    print("\033[1;34;40m \n")
+  else:
+    print("\033[1;32;40m \n")
+  
 
 def player_in():
   while True:
@@ -67,20 +72,25 @@ def clearConsole():
 
 welcome_screen()
 
+
 while not is_game_over():
   
   # Print the board and whose turn it is
   print_board()
   print('Player {}'.format(turn+1))
+
+  if turn==0:
+    print("\033[1;34;40m \n")
+  else:
+    print("\033[1;32;40m \n")
   
   # Get the user input
   row_choice, col_choice = player_in()
 
-  
-
   if (row_choice > 2 or row_choice < 0 or col_choice > 2 or col_choice < 0):
     print(f"({row_choice}, {col_choice}) is not on the grid. Please use row and column numbers from 0 to 2.")
     continue
+  print("\033[1;34;40m \n")
 
   # Put their move on the board
   
