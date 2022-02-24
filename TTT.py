@@ -180,8 +180,12 @@ while not is_game_over():
     print(f"({row_choice}, {col_choice}) is not on the grid. Please use row and column numbers from 0 to 2.")
     continue
 <<<<<<< HEAD
+<<<<<<< HEAD
   
 
+=======
+  print("\033[1;34;40m \n")
+>>>>>>> origin/main
 =======
   print("\033[1;34;40m \n")
 >>>>>>> origin/main
@@ -195,11 +199,17 @@ while not is_game_over():
   change_turn()
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   # Check for Win
   check_win_screen()
 =======
+=======
+>>>>>>> origin/main
 print_board()
 if is_game_draw() is True:
   print("There are no space left in the board for you to fill.")
 
+<<<<<<< HEAD
+>>>>>>> origin/main
+=======
 >>>>>>> origin/main
