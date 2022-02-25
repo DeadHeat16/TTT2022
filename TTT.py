@@ -6,6 +6,8 @@ board = [['_','_','_'],
 
 symbols = ['X', 'O']
 turn = 0
+p1_name = 'Player 1'
+p2_name = 'Player 2'
 
 def welcome_screen():
   logo = '''
@@ -70,14 +72,22 @@ def clearConsole():
     command = 'cls'
   os.system(command)
 
+def show_name():
+  if turn == 0:
+    print(f"Player 1: {p1_name}")
+  else:
+    print(f"Player 2: {p2_name}")
+
 welcome_screen()
 
+p1_name = input('Player 1, what is your name? ')
+p2_name = input('Player 2, what is your name? ')
 
 while not is_game_over(board):
   
   # Print the board and whose turn it is
   print_board()
-  print('Player {}'.format(turn+1))
+  show_name()
 
   if turn==0:
     print("\033[1;34;40m \n")
