@@ -18,6 +18,95 @@ def welcome_screen():
   '''
   print(logo)
 
+#checks number of X and O in board and holds a counter value, when 3 values are found then stop game and run game over screen 
+#Check Diagonals
+#if board[0][0]+ board[1][1]+board[2][2]=='XXX':
+      #print("Player 1 wins!")
+      #quit()
+
+def check_win_screen():
+  x_counter=0
+  o_counter=0
+  # Horizontal Checks 
+  for j in board:
+    #Horizontal checks in row 0
+    if board[0][0]+ board[0][1]+board[0][2]=='XXX':
+      print_board()
+      print("Player 1 wins!")
+      quit()
+    if board[0][0]+board[0][1]+board[0][2]=="OOO":
+      print_board()
+      print("Player 2 wins!")
+      quit()
+    #Horizontal Checks in row 1 
+    if board[1][0]+board[1][1]+board[1][2]=="XXX":
+      print_board()
+      print("Player 1 wins!")
+      quit()
+    if board[1][0]+board[1][1]+board[1][2]=="OOO":
+      print_board()
+      print("Player 2 wins!")
+      quit
+    #Horizontal Checks in row 2
+    if board[2][0]+board[2][1]+board[2][2]=="XXX":
+      print_board()
+      print("Player 1 win!")
+      quit()
+    if board[2][0]+board[2][1]+board[2][2]=="OOO":
+      print_board()
+      print("Player 2 wins!")
+      quit()
+    #Vertical Checks in column 0 
+    if board[0][0]+board[1][0]+board[2][0]=="XXX":
+      print_board()
+      print("Player 1 wins!")
+      quit() 
+    if board[0][0]+ board[1][0] + board[2][0]=="OOO":
+      print_board()
+      print("Player 2 wins!")
+      quit() 
+    #Vertical checks in column 1
+    if board[0][1]+board[1][1]+board[2][1]=="XXX":
+      print_board()
+      print("Player 1 wins!")
+      quit() 
+    if board[0][1]+board[1][1]+board[2][1]=="OOO":
+      print_board()
+      print("Player 2 wins!")
+      quit() 
+    #Vertical Checks for Column 2 
+    if board[0][2]+board[1][2]+board[2][2]=="XXX":
+      print_board()
+      print("Player 1 wins!")
+      quit()
+    if board[0][2]+board[1][2]+board[2][2]=="OOO":
+      print_board()
+      print("Player 2 wins!")
+      quit() 
+    #Diagonal Checks from Right to left 
+    if board[0][2]+board[1][1]+board[2][0]=="XXX":
+      print_board()
+      print("Player 1 wins!")
+      quit()
+    if board[0][2]+board[1][1]+board[2][0]=="OOO":
+      print_board()
+      print("Player 2 wins!")
+      quit() 
+    # Diagonal Checks for Left to Right 
+    if board[0][0]+board[1][1]+board[2][2]=="XXX":
+      print_board()
+      print("Player 1 wins!")
+      quit() 
+    if board[0][0]+board[1][1]+board[2][2]=="OOO":
+      print_board()
+      print("Player 2 wins!")
+      quit()  
+
+
+       
+  
+
+
 # Prints the board
 def print_board():
   for row in board:
@@ -100,7 +189,16 @@ while not is_game_over(board):
   if (row_choice > 2 or row_choice < 0 or col_choice > 2 or col_choice < 0):
     print(f"({row_choice}, {col_choice}) is not on the grid. Please use row and column numbers from 0 to 2.")
     continue
+<<<<<<< HEAD
+<<<<<<< HEAD
+  
+
+=======
   print("\033[1;34;40m \n")
+>>>>>>> origin/main
+=======
+  print("\033[1;34;40m \n")
+>>>>>>> origin/main
 
   # Put their move on the board
   
@@ -110,7 +208,18 @@ while not is_game_over(board):
   # Next turn
   change_turn()
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+  # Check for Win
+  check_win_screen()
+=======
+=======
+>>>>>>> origin/main
 print_board()
 if is_game_draw(board) is True:
   print("There are no space left in the board for you to fill.")
 
+<<<<<<< HEAD
+>>>>>>> origin/main
+=======
+>>>>>>> origin/main
