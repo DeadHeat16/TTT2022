@@ -24,81 +24,81 @@ def welcome_screen():
       #print("Player 1 wins!")
       #quit()
 
-def check_win_screen():
+def check_win_screen(game_board):
   x_counter=0
   o_counter=0
   # Horizontal Checks 
-  for j in board:
+  for j in game_board:
     #Horizontal checks in row 0
-    if board[0][0]+ board[0][1]+board[0][2]=='XXX':
-      print_board()
+    if game_board[0][0]+ game_board[0][1]+game_board[0][2]=='XXX':
+      print_board(game_board)
       print("Player 1 wins!")
       quit()
-    if board[0][0]+board[0][1]+board[0][2]=="OOO":
-      print_board()
+    if game_board[0][0]+game_board[0][1]+game_board[0][2]=="OOO":
+      print_board(game_board)
       print("Player 2 wins!")
       quit()
     #Horizontal Checks in row 1 
-    if board[1][0]+board[1][1]+board[1][2]=="XXX":
-      print_board()
+    if game_board[1][0]+game_board[1][1]+game_board[1][2]=="XXX":
+      print_board(game_board)
       print("Player 1 wins!")
       quit()
-    if board[1][0]+board[1][1]+board[1][2]=="OOO":
-      print_board()
+    if game_board[1][0]+game_board[1][1]+game_board[1][2]=="OOO":
+      print_board(game_board)
       print("Player 2 wins!")
       quit
     #Horizontal Checks in row 2
-    if board[2][0]+board[2][1]+board[2][2]=="XXX":
-      print_board()
+    if game_board[2][0]+game_board[2][1]+game_board[2][2]=="XXX":
+      print_board(game_board)
       print("Player 1 win!")
       quit()
-    if board[2][0]+board[2][1]+board[2][2]=="OOO":
-      print_board()
+    if game_board[2][0]+game_board[2][1]+game_board[2][2]=="OOO":
+      print_board(game_board)
       print("Player 2 wins!")
       quit()
     #Vertical Checks in column 0 
-    if board[0][0]+board[1][0]+board[2][0]=="XXX":
-      print_board()
+    if game_board[0][0]+game_board[1][0]+game_board[2][0]=="XXX":
+      print_board(game_board)
       print("Player 1 wins!")
       quit() 
-    if board[0][0]+ board[1][0] + board[2][0]=="OOO":
-      print_board()
+    if game_board[0][0]+ game_board[1][0] + game_board[2][0]=="OOO":
+      print_board(game_board)
       print("Player 2 wins!")
       quit() 
     #Vertical checks in column 1
-    if board[0][1]+board[1][1]+board[2][1]=="XXX":
-      print_board()
+    if game_board[0][1]+game_board[1][1]+game_board[2][1]=="XXX":
+      print_board(game_board)
       print("Player 1 wins!")
       quit() 
-    if board[0][1]+board[1][1]+board[2][1]=="OOO":
-      print_board()
+    if game_board[0][1]+game_board[1][1]+game_board[2][1]=="OOO":
+      print_board(game_board)
       print("Player 2 wins!")
       quit() 
     #Vertical Checks for Column 2 
-    if board[0][2]+board[1][2]+board[2][2]=="XXX":
-      print_board()
+    if game_board[0][2]+game_board[1][2]+game_board[2][2]=="XXX":
+      print_board(game_board)
       print("Player 1 wins!")
       quit()
-    if board[0][2]+board[1][2]+board[2][2]=="OOO":
-      print_board()
+    if game_board[0][2]+game_board[1][2]+game_board[2][2]=="OOO":
+      print_board(game_board)
       print("Player 2 wins!")
       quit() 
     #Diagonal Checks from Right to left 
-    if board[0][2]+board[1][1]+board[2][0]=="XXX":
-      print_board()
+    if game_board[0][2]+game_board[1][1]+game_board[2][0]=="XXX":
+      print_board(game_board)
       print("Player 1 wins!")
       quit()
-    if board[0][2]+board[1][1]+board[2][0]=="OOO":
-      print_board()
+    if game_board[0][2]+game_board[1][1]+game_board[2][0]=="OOO":
+      print_board(game_board)
       print("Player 2 wins!")
       quit() 
     # Diagonal Checks for Left to Right 
-    if board[0][0]+board[1][1]+board[2][2]=="XXX":
-      print_board()
+    if game_board[0][0]+game_board[1][1]+game_board[2][2]=="XXX":
+      print_board(game_board)
       print("Player 1 wins!")
       quit() 
-    if board[0][0]+board[1][1]+board[2][2]=="OOO":
-      print_board()
+    if game_board[0][0]+game_board[1][1]+game_board[2][2]=="OOO":
+      print_board(game_board)
       print("Player 2 wins!")
       quit()  
 
@@ -108,16 +108,16 @@ def check_win_screen():
 
 
 # Prints the board
-def print_board():
-  for row in board:
+def print_board(game_board):
+  for row in game_board:
     for col in row:
       print(col, end=' ')
     print()
 
 # Inserts a move at a given row & column
-def make_move(row, col, symbol):
-  if (board[row][col] == "_"):
-    board[row][col] = symbol
+def make_move(row, col, symbol, game_board):
+  if (game_board[row][col] == "_"):
+    game_board[row][col] = symbol
   else:
     print("already chosen!")
 
@@ -175,7 +175,7 @@ p2_name = input('Player 2, what is your name? ')
 while not is_game_over(board):
   
   # Print the board and whose turn it is
-  print_board()
+  print_board(board)
   show_name()
 
   if turn==0:
@@ -189,37 +189,23 @@ while not is_game_over(board):
   if (row_choice > 2 or row_choice < 0 or col_choice > 2 or col_choice < 0):
     print(f"({row_choice}, {col_choice}) is not on the grid. Please use row and column numbers from 0 to 2.")
     continue
-<<<<<<< HEAD
-<<<<<<< HEAD
-  
 
-=======
   print("\033[1;34;40m \n")
->>>>>>> origin/main
-=======
-  print("\033[1;34;40m \n")
->>>>>>> origin/main
+
 
   # Put their move on the board
   
-  make_move(row_choice, col_choice, symbols[turn])
+  make_move(row_choice, col_choice, symbols[turn], board)
   # Clear the console from previous turn
   clearConsole()
   # Next turn
   change_turn()
 
-<<<<<<< HEAD
-<<<<<<< HEAD
   # Check for Win
-  check_win_screen()
-=======
-=======
->>>>>>> origin/main
-print_board()
+  check_win_screen(board)
+
+print_board(board)
 if is_game_draw(board) is True:
   print("There are no space left in the board for you to fill.")
 
-<<<<<<< HEAD
->>>>>>> origin/main
-=======
->>>>>>> origin/main
+
