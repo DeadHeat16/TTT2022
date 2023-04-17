@@ -159,7 +159,7 @@ def show_name():
   else:
     print(f"Player 2: {p2_name}")
 
-
+# Function that creates and starts the game.
 def playgame():
   board = [['_','_','_'],
             ['_','_','_'],
@@ -199,21 +199,26 @@ def playgame():
     print("There are no space left in the board for you to fill.")
     playAgain()
 
+# Executed after game is finished. Asks the user to input 1 to play another game and 2 to end the program.
 def playAgain():
   choice = "-1"
+  # Asks for input
   print("Would you like to play again? Select 1 to play again, select 2 to end game. ")
   choice = str(input())
+  # if input is not 1 or 2 then ask user to re-input 1 or 2. Will repeat until 1 or 2 is inputted.
   while choice != "1" and choice != "2":
     print("Please select 1 or 2. Would you like to play again? ")
     choice = str(input())
-  
+  # if input is 1 then replay.
   if choice == "1":
     clearConsole()
     playgame()
+  # if input is 2 then end the program
   elif choice == "2":
     print("Thanks for playing!")
     quit()
-      
+
+
 welcome_screen()
 
 p1_name = input('Player 1, what is your name? ')
