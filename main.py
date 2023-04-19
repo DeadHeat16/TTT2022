@@ -30,6 +30,7 @@ def check_win_screen(game_board):
     #Horizontal checks in row 0
     if game_board[0][0]+ game_board[0][1]+game_board[0][2]=='XXX':
       print_board(game_board)
+
       print("Player 1 wins!")
       playAgain()
     if game_board[0][0]+game_board[0][1]+game_board[0][2]=="OOO":
@@ -102,9 +103,15 @@ def check_win_screen(game_board):
 
 # Prints the board
 def print_board(game_board):
+  ro = -1
+  print("  0 1 2")
   for row in game_board:
+    ro += 1
+    print(ro, end=" ")
     for col in row:
-      print(col, end=' ')
+      # Now prints the coords of each position of the board, per request of Bryan's and Markus's request #
+      print(col, end=" ")
+      
     print()
 
 # Inserts a move at a given row & column
@@ -218,7 +225,7 @@ def playAgain():
     print("Thanks for playing!")
     quit()
 
-
+# Begin the program
 welcome_screen()
 
 p1_name = input('Player 1, what is your name? ')
