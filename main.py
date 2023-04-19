@@ -9,97 +9,81 @@ turn = 0
 p1_name = 'Player 1'
 p2_name = 'Player 2'
 
-def welcome_screen():
-  logo = '''
- ____  __  ___    ____  __    ___    ____  __  ____ 
-(_  _)(  )/ __)  (_  _)/ _\  / __)  (_  _)/  \(  __)
-  )(   )(( (__     )( /    \( (__     )( (  O )) _) 
- (__) (__)\___)   (__)\_/\_/ \___)   (__) \__/(____)
-  '''
-  print(logo)
-
-#checks number of X and O in board and holds a counter value, when 3 values are found then stop game and run game over screen 
-#Check Diagonals
-#if board[0][0]+ board[1][1]+board[2][2]=='XXX':
-      #print("Player 1 wins!")
-      #quit()
-
 def check_win_screen(game_board):
-  # Horizontal Checks 
+  # Horizontal Checks
   for j in game_board:
     #Horizontal checks in row 0
-    if game_board[0][0]+ game_board[0][1]+game_board[0][2]=='XXX':
+    if game_board[0][0] + game_board[0][1] + game_board[0][2] == 'XXX':
       print_board(game_board)
-
       print("Player 1 wins!")
       playAgain()
-    if game_board[0][0]+game_board[0][1]+game_board[0][2]=="OOO":
+    elif game_board[0][0] + game_board[0][1] + game_board[0][2] == "OOO":
       print_board(game_board)
       print("Player 2 wins!")
       playAgain()
-    #Horizontal Checks in row 1 
-    if game_board[1][0]+game_board[1][1]+game_board[1][2]=="XXX":
+    #Horizontal Checks in row 1
+    elif game_board[1][0] + game_board[1][1] + game_board[1][2] == "XXX":
       print_board(game_board)
       print("Player 1 wins!")
       playAgain()
-    if game_board[1][0]+game_board[1][1]+game_board[1][2]=="OOO":
+    elif game_board[1][0] + game_board[1][1] + game_board[1][2] == "OOO":
       print_board(game_board)
       print("Player 2 wins!")
       playAgain()
     #Horizontal Checks in row 2
-    if game_board[2][0]+game_board[2][1]+game_board[2][2]=="XXX":
+    elif game_board[2][0] + game_board[2][1] + game_board[2][2] == "XXX":
       print_board(game_board)
       print("Player 1 win!")
       playAgain()
-    if game_board[2][0]+game_board[2][1]+game_board[2][2]=="OOO":
+    elif game_board[2][0] + game_board[2][1] + game_board[2][2] == "OOO":
       print_board(game_board)
       print("Player 2 wins!")
       playAgain()
-    #Vertical Checks in column 0 
-    if game_board[0][0]+game_board[1][0]+game_board[2][0]=="XXX":
+    #Vertical Checks in column 0
+    elif game_board[0][0] + game_board[1][0] + game_board[2][0] == "XXX":
       print_board(game_board)
       print("Player 1 wins!")
-      playAgain() 
-    if game_board[0][0]+ game_board[1][0] + game_board[2][0]=="OOO":
+      playAgain()
+    elif game_board[0][0] + game_board[1][0] + game_board[2][0] == "OOO":
       print_board(game_board)
       print("Player 2 wins!")
-      playAgain() 
+      playAgain()
     #Vertical checks in column 1
-    if game_board[0][1]+game_board[1][1]+game_board[2][1]=="XXX":
-      print_board(game_board)
-      print("Player 1 wins!")
-      playAgain() 
-    if game_board[0][1]+game_board[1][1]+game_board[2][1]=="OOO":
-      print_board(game_board)
-      print("Player 2 wins!")
-      playAgain() 
-    #Vertical Checks for Column 2 
-    if game_board[0][2]+game_board[1][2]+game_board[2][2]=="XXX":
+    elif game_board[0][1] + game_board[1][1] + game_board[2][1] == "XXX":
       print_board(game_board)
       print("Player 1 wins!")
       playAgain()
-    if game_board[0][2]+game_board[1][2]+game_board[2][2]=="OOO":
+    elif game_board[0][1] + game_board[1][1] + game_board[2][1] == "OOO":
       print_board(game_board)
       print("Player 2 wins!")
-      playAgain() 
-    #Diagonal Checks from Right to left 
-    if game_board[0][2]+game_board[1][1]+game_board[2][0]=="XXX":
+      playAgain()
+    #Vertical Checks for Column 2
+    elif game_board[0][2] + game_board[1][2] + game_board[2][2] == "XXX":
       print_board(game_board)
       print("Player 1 wins!")
       playAgain()
-    if game_board[0][2]+game_board[1][1]+game_board[2][0]=="OOO":
+    elif game_board[0][2] + game_board[1][2] + game_board[2][2] == "OOO":
       print_board(game_board)
       print("Player 2 wins!")
-      playAgain() 
-    # Diagonal Checks for Left to Right 
-    if game_board[0][0]+game_board[1][1]+game_board[2][2]=="XXX":
+      playAgain()
+    #Diagonal Checks from Right to left
+    elif game_board[0][2] + game_board[1][1] + game_board[2][0] == "XXX":
       print_board(game_board)
       print("Player 1 wins!")
-      playAgain() 
-    if game_board[0][0]+game_board[1][1]+game_board[2][2]=="OOO":
+      playAgain()
+    elif game_board[0][2] + game_board[1][1] + game_board[2][0] == "OOO":
       print_board(game_board)
       print("Player 2 wins!")
-      playAgain()  
+      playAgain()
+    # Diagonal Checks for Left to Right
+    elif game_board[0][0] + game_board[1][1] + game_board[2][2] == "XXX":
+      print_board(game_board)
+      print("Player 1 wins!")
+      playAgain()
+    elif game_board[0][0] + game_board[1][1] + game_board[2][2] == "OOO":
+      print_board(game_board)
+      print("Player 2 wins!")
+      playAgain()
 
 # Prints the board
 def print_board(game_board):
@@ -111,7 +95,6 @@ def print_board(game_board):
     for col in row:
       # Now prints the coords of each position of the board, per request of Bryan's and Markus's request #
       print(col, end=" ")
-      
     print()
 
 # Inserts a move at a given row & column
@@ -121,38 +104,27 @@ def make_move(row, col, symbol, game_board):
   else:
     print("already chosen!")
 
-
-# Returns true when the game is over 
-# Note: Currently only detects draws, not wins or losses
-def is_game_over(game_board):
-  if is_game_draw(game_board) is True:
-    return True 
-  return False
-
-def is_game_draw(game_board):
-  for row in game_board:
-   for item in row:
-     if item == '_' :
-       return False 
-  return True
-
-# Alternates the turn between 0 and 1
+# Changes to next turn
 def change_turn():
   global turn
-  turn = (turn + 1) % 2
-  if turn==0:
+  turn += 1
+  if turn % 2 == 0:
     print("\033[1;34;40m \n")
   else:
     print("\033[1;32;40m \n")
-  
+
 def player_in():
   while True:
     try:
       row_choice = int(input('Which row would you like to choose? '))
       col_choice = int(input('Which column would you like to choose? '))
-      return row_choice, col_choice
     except:
       print("Not a valid option, please try again.")
+    else:
+      if row_choice <= 2 and col_choice <= 2:
+        return row_choice, col_choice
+      else:
+        print("Not a valid option, please try again.")
 
 def clearConsole():
   command = 'clear'
@@ -161,7 +133,7 @@ def clearConsole():
   os.system(command)
 
 def show_name():
-  if turn == 0:
+  if turn % 2 == 0:
     print(f"Player 1: {p1_name}")
   else:
     print(f"Player 2: {p2_name}")
@@ -171,13 +143,13 @@ def playgame():
   board = [['_','_','_'],
             ['_','_','_'],
             ['_','_','_']]
-  while not is_game_over(board):
+  while turn <= 9:
   
   # Print the board and whose turn it is
     print_board(board)
     show_name()
 
-    if turn==0:
+    if turn % 2 == 0:
       print("\033[1;34;40m \n")
     else:
       print("\033[1;32;40m \n")
@@ -185,12 +157,7 @@ def playgame():
   # Get the user input
     row_choice, col_choice = player_in()
 
-    if (row_choice > 2 or row_choice < 0 or col_choice > 2 or col_choice < 0):
-      print(f"({row_choice}, {col_choice}) is not on the grid. Please use row and column numbers from 0 to 2.")
-      continue
-
     print("\033[1;34;40m \n")
-
 
   # Put their move on the board
     make_move(row_choice, col_choice, symbols[turn], board)
@@ -201,10 +168,10 @@ def playgame():
 
   # Check for Win
     check_win_screen(board)
-
-  if is_game_draw(board) is True:
-    print("There are no space left in the board for you to fill.")
-    playAgain()
+  
+  print_board(board)
+  print("There are no space left in the board to fill, the game is a draw")
+  playAgain()
 
 # Executed after game is finished. Asks the user to input 1 to play another game and 2 to end the program.
 def playAgain():
@@ -226,7 +193,12 @@ def playAgain():
     quit()
 
 # Begin the program
-welcome_screen()
+print('''
+ ____  __  ___    ____  __    ___    ____  __  ____ 
+(_  _)(  )/ __)  (_  _)/ _\  / __)  (_  _)/  \(  __)
+  )(   )(( (__     )( /    \( (__     )( (  O )) _) 
+ (__) (__)\___)   (__)\_/\_/ \___)   (__) \__/(____)
+  ''')
 
 p1_name = input('Player 1, what is your name? ')
 p2_name = input('Player 2, what is your name? ')
